@@ -41,6 +41,7 @@
       node-array = ast[node-array-name]
       new-path = if path then "#path.#node-array-name" else node-array-name
       for node in node-array
+        continue unless node
         visit-pre node, fn, new-path
 
 !function visit-children ast, fn
